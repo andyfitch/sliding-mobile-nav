@@ -40,7 +40,7 @@ $(function(){
 	
 	// Deal with profile button touches / swipes
 	$('.mobile-left-button').hammer({ prevent_default: true }).bind('click touchstart swipe', function(ev){
-		if (parseInt(div_body.css('marginLeft')) == nav_slide_px) {
+		if (parseInt(div_body.css('marginLeft'), 10) == nav_slide_px) {
 			hide_left_nav();
 		} else {
 			show_left_nav();
@@ -51,7 +51,7 @@ $(function(){
 	
 	// Deal with nav button touches / swipes
 	$('.mobile-right-button').hammer({ prevent_default: true }).bind('click touchstart swipe', function(ev){
-		if (parseInt(div_body.css('marginLeft')) == '-' + nav_slide_px) {
+		if (parseInt(div_body.css('marginLeft'), 10) == '-' + nav_slide_px) {
 			hide_right_nav();
 		} else {
 			show_right_nav();
@@ -63,9 +63,9 @@ $(function(){
 	$('.overlay').hammer().bind('touchstart dragstart swipe', function(ev){
 		ev.preventDefault();
 		ev.stopPropagation();
-		if (parseInt(div_body.css('marginLeft')) == nav_slide_px) {
+		if (parseInt(div_body.css('marginLeft'), 10) == nav_slide_px) {
 			hide_left_nav();
-		} else if (parseInt(div_body.css('marginLeft')) == '-' + nav_slide_px) {
+		} else if (parseInt(div_body.css('marginLeft'), 10) == '-' + nav_slide_px) {
 			hide_right_nav();
 		}
 		return;
@@ -73,7 +73,7 @@ $(function(){
 	
 	// Non touch events
 	$('.mobile-left-button').bind('click', function(){
-		if (parseInt(div_body.css('marginLeft')) == nav_slide_px) {
+		if (parseInt(div_body.css('marginLeft'), 10) == nav_slide_px) {
 			hide_left_nav();
 		} else {
 			show_left_nav();
@@ -83,7 +83,7 @@ $(function(){
 	});
 	
 	$('.mobile-right-button').bind('click', function(ev){
-		if (parseInt(div_body.css('marginLeft')) == '-' + nav_slide_px) {
+		if (parseInt(div_body.css('marginLeft'), 10) == '-' + nav_slide_px) {
 			hide_right_nav();
 		} else {
 			show_right_nav();
@@ -95,9 +95,9 @@ $(function(){
 	$('body').on('click', '.overlay', function(ev){
 		ev.preventDefault();
 		ev.stopPropagation();
-		if (parseInt(div_body.css('marginLeft')) == nav_slide_px) {
+		if (parseInt(div_body.css('marginLeft'), 10) == nav_slide_px) {
 			hide_left_nav();
-		} else if (parseInt(div_body.css('marginLeft')) == '-' + nav_slide_px) {
+		} else if (parseInt(div_body.css('marginLeft'), 10) == '-' + nav_slide_px) {
 			hide_right_nav();
 		}
 		return;
